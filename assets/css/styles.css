@@ -40,7 +40,7 @@ body {
 /* common */
 
 .content {
-    width: 1800px;
+    width: 1310px;
     max-width: calc(100% - 48px);
     margin-left: auto;
     margin-right: auto;
@@ -81,10 +81,10 @@ a {
     /* background: var(--background-color); */
     background: var(--background-color);
     display: flex;
-    padding-top: 26px;
+    padding-top: 20px;
     position: sticky;
     top: -10px;
-    z-index: 1;
+    z-index: 2;
 }
 .info {
     display: flex;
@@ -94,7 +94,7 @@ a {
 .su_menh {
     display: flex;
     align-items: center;
-    padding: 12px 0;
+    padding: 12px 0 0 0;
     margin-left: auto;
 }
 .su_menh {
@@ -102,7 +102,7 @@ a {
     width: 70%;
 }
 .su_menh p {
-    color: #4f5361;
+    color: #171100;
     font-size: 2rem;
     margin-left: 100px;
 }
@@ -111,7 +111,7 @@ a {
     display: flex;
 }
 .search-bar .search-view {
-    height: 50px;
+    height: 45px;
     font-size: 1.6rem;
     font-weight: 500;
     border: #171100 1px solid;
@@ -120,7 +120,7 @@ a {
 .search-bar .search-btn {
     position: absolute;
     right: 20px;
-    top: 21px;
+    top: 18px;
     bottom: 0;
 }
 .navbar .menu {
@@ -167,7 +167,7 @@ a {
 .navbar ul a {
     font-size: 1.7rem;
     font-weight: 500;
-    color: #4f5361;
+    color: #171100;
     padding: 8px 14px;
 }
 .navbar ul a:hover {
@@ -203,7 +203,7 @@ a {
     cursor: pointer;
 }
 .navbar .actions-btn {
-    padding: 13px 16px;
+    padding: 0px 16px;
     margin-left: 18px;
     border-radius: 8px;
     font-size: 1.5rem;
@@ -215,7 +215,7 @@ a {
     position: fixed;
     z-index: 1;
     left: 0;
-    top: 0;
+    top: -80px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -228,7 +228,7 @@ a {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 23%;
+    width: 30%;
     border-radius: 25px;
     background: #fffcf4;
 }
@@ -241,7 +241,7 @@ a {
     ); /* Đảm bảo rằng ô chọn có kích thước tương tự ô nhập */
 }
 .modal-login {
-    width: 20%;
+    width: 28%;
 }
 .modal-login .login-controls {
     display: flex;
@@ -338,7 +338,7 @@ input[type="password"] {
 /* slide show */
 .slider {
     max-width: 100vw;
-    height: 650px;
+    height: 450px;
     margin: auto;
     position: relative;
     overflow: hidden;
@@ -374,16 +374,6 @@ input[type="password"] {
     cursor: pointer;
 }
 
-/* .slider .buttons button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: black;
-    color: #fff;
-    border: none;
-    font-family: monospace;
-    font-weight: bold;
-} */
 .buttons button:hover {
     background: var(--primary-color);
     color: #fff;
@@ -392,7 +382,6 @@ input[type="password"] {
 .slider .dots {
     position: absolute;
     bottom: 20px;
-    left: 0;
     color: #fff;
     width: 100%;
     margin: 0;
@@ -420,13 +409,12 @@ input[type="password"] {
 }
 /* banner */
 .banner-container {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .banner-content {
     margin-top: 90px;
-    width: 1800px;
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 .banner-container .left-content {
     gap: 10px;
@@ -456,7 +444,7 @@ input[type="password"] {
 }
 .banner-container .left-content img {
     width: 100%;
-    height: 450px;
+    height: 350px;
     object-fit: cover;
 }
 .right-content {
@@ -468,7 +456,7 @@ input[type="password"] {
 .right-content .desc {
     position: absolute;
     bottom: 1px;
-    width: 49.5%;
+    width: 49.3%;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 550;
@@ -484,11 +472,11 @@ input[type="password"] {
 }
 .right-content img {
     width: 100%;
-    height: 400px;
+    height: 270px;
     object-fit: cover;
 }
 .right-content .high-item img {
-    height: 500px;
+    height: 430px;
     object-fit: cover;
 }
 .right-content .row-img {
@@ -501,6 +489,9 @@ input[type="password"] {
 }
 .collection {
     margin-top: 100px;
+}
+.collection {
+    padding-top: 70px;
 }
 .collection .head-title {
     display: flex;
@@ -516,17 +507,16 @@ input[type="password"] {
     margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 10px;
     margin-left: 20px;
 }
 .items-row .item {
-    width: calc(25% - 30px);
+    width: calc(25% - 10px);
     margin-bottom: 20px;
     border: 1px solid #e2dfda;
     border-radius: 12px;
     margin-bottom: 10px;
 }
-
 .items-row .item {
     position: relative;
 }
@@ -535,7 +525,7 @@ input[type="password"] {
 }
 .items-row .item .thumb {
     width: calc(100% + 1px);
-    height: 420px;
+    height: 250px;
     border-radius: 12px 12px 0 0;
     object-fit: cover;
 }
@@ -559,7 +549,6 @@ input[type="password"] {
     font-size: 1.6rem;
 }
 .items-row .item .desc {
-    margin-top: 10px;
     font-size: 2rem;
     margin-left: 2px;
     padding: 16px 22px 22px 22px;
@@ -570,17 +559,9 @@ input[type="password"] {
 }
 
 .item .price {
-    margin-top: 10px;
     position: relative;
 }
-.price .cart {
-    position: absolute;
-    top: 0px;
-    right: 10%;
-}
-.cart .size {
-    width: 33px;
-}
+
 .item .value {
     text-decoration: line-through;
 }
@@ -594,9 +575,18 @@ input[type="password"] {
     margin-left: 5px;
 }
 .stars .vote .sell {
-    padding-left: 50px;
+    padding-left: 2px;
 }
-.blog {
+.vote .cart {
+    position: absolute;
+    right: -80px;
+    bottom: -10px;
+}
+.cart .size {
+    width: 33px;
+}
+.blog,
+.collection2 {
     margin: 100px 0 0 0;
     background: var(--background-color);
     padding-bottom: 70px;
@@ -612,13 +602,14 @@ input[type="password"] {
     line-height: 1.75;
 }
 .blog .items-row .thumb {
-    height: 350px;
+    height: 260px;
 }
 .blog .items-row .desc {
     position: relative;
     margin-bottom: 30px;
 }
 .blog .items-row .blog-title {
+    width: 100%;
     font-weight: 550;
     line-height: 1.65;
 }
@@ -678,7 +669,7 @@ input[type="password"] {
     position: absolute;
     bottom: 0;
     width: 80%;
-    right: -450px;
+    right: -350px;
     height: 350px;
 }
 .subscription .btn-subscr {
@@ -716,7 +707,7 @@ input[type="password"] {
 .footer .desc {
     margin-top: 18px;
     max-width: 267px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.86;
     color: #bfbcb2;
@@ -741,8 +732,8 @@ input[type="password"] {
 .footer .list a {
     display: inline-block;
     margin-bottom: 12px;
-    font-size: 1.7rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 300;
     line-height: 1.86;
     color: #bfbcb2;
 }

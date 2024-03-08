@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nội thất Besnik</title>
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <style></style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="content">
+                <div class="info">
+                    <div class="su_menh">
+                        <!-- Logo -->
+                        <a href="/">
+                            <img src="./assets/img/logo.svg" alt="Besnik" />
+                        </a>
+                        <p>Làm sang trọng thêm mái ấm của gia đình bạn</p>
+                    </div>
+                    <div class="search-bar">
+                        <input
+                            type="text"
+                            id="search-bar"
+                            placeholder="Tìm kiếm sản phẩm..."
+                            class="search-view"
+                        />
+                        <a class="search-btn" href="#!">
+                            <img src="./assets/img/bx-search.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <nav class="navbar">
+                    <!-- Navigation -->
+                    <ul class="menu">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li>
+                            <a href="#">Sản Phẩm</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Bộ sưu tập</a></li>
+                                <li><a href="#">Phòng ngủ</a></li>
+                                <li><a href="#">Phòng khách</a></li>
+                                <li><a href="#">Tủ bếp</a></li>
+                                <li><a href="#">Phòng ăn</a></li>
+                                <li><a href="#">Phòng làm việc</a></li>
+                                <li><a href="#">Đồ Trang Trí</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Showroom</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">TP.HCM</a></li>
+                                <li><a href="#">Hà Nội</a></li>
+                                <li><a href="#">Đà Nẵng</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Bảo Hành</a></li>
+                        <li><a href="#">Khuyến mãi</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                    <!-- Action -->
+                    <div class="actions">
+                        <button
+                            onclick="document.getElementById('myModal').style.display='block'"
+                            class="btn actions-link"
+                        >
+                            Đăng Nhập
+                        </button>
+                        <img
+                            class="shop-bag"
+                            src="./assets/img/bx-shopping-bag.svg"
+                            alt="Shopping Bag"
+                        />
+                    </div>
+                </nav>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content modal-login">
+                    <h2>Đăng nhập</h2>
+                    <form class="login-form">
+                        <label for="username">Tên đăng nhập hoặc email*</label>
+                        <div class="input-with-icon">
+                            <img
+                                src="./assets/img/bxs-user.svg"
+                                alt="Icon"
+                                class="input-icon"
+                            />
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                class="border-login"
+                                required
+                            />
+                        </div>
+                        <br />
+                        <label for="password">Mật khẩu*</label>
+                        <div class="input-with-icon">
+                            <img
+                                src="./assets/img/bxs-lock-alt.svg"
+                                alt="Show Password"
+                                class="input-icon"
+                                onclick="togglePasswordVisibility()"
+                            />
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="border-login"
+                                required
+                                autocomplete="new-password"
+                            />
+                        </div>
+                        <div class="login-controls">
+                            <nav>
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                    name="remember"
+                                />
+                                <label for="remember">Lưu mật khẩu</label>
+                            </nav>
+                            <br />
+                            <a href="#!" style="color: black">Quên mật khẩu?</a>
+                        </div>
+
+                        <div class="btn-login">
+                            <button
+                                class="btn btn-Modal"
+                                type="button"
+                                onclick="closeModal()"
+                            >
+                                Hủy
+                            </button>
+                            <button class="btn btn-Modal2" type="submit">
+                                Đăng nhập
+                            </button>
+                            <p class="invite-sign-up">
+                                Bạn chưa có tài khoản?
+                                <strong
+                                    onclick="openSignupModalFromLogin()"
+                                    class="actions-link"
+                                >
+                                    Đăng Ký
+                                </strong>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Signup Modal -->
+            <div id="myModalSignup" class="modal sign-up">
+                <div class="modal-content">
+                    <h2>Đăng ký</h2>
+                    <form class="signup-form" onsubmit="return validateForm()">
+                        <div class="names">
+                            <span class="first-name">
+                                <label for="first-name">Họ*</label>
+                                <input
+                                    type="text"
+                                    id="first-name"
+                                    name="first-name"
+                                    class="none-border"
+                                    required
+                                />
+                            </span>
+                            <span class="last-name">
+                                <label for="last-name">Tên*</label>
+                                <input
+                                    type="text"
+                                    id="last-name"
+                                    name="last-name"
+                                    class="none-border"
+                                    required
+                                />
+                            </span>
+                        </div>
+                        <br />
+                        <label for="username">Tên đăng nhập*</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="none-border"
+                            required
+                        /><br /><br />
+                        <label for="username">Email*</label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            class="none-border"
+                            required
+                        /><br /><br />
+                        <label for="password">Mật khẩu*</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="none-border"
+                            required
+                        /><br /><br />
+                        <label for="confirm_password">Nhập lại mật khẩu:</label>
+                        <input
+                            type="password"
+                            id="confirm_password"
+                            name="confirm_password"
+                            class="none-border"
+                            required
+                        /><br /><br />
+                        <div class="row-date">
+                            <span class="form-row">
+                                <label for="day">Ngày sinh*</label>
+                                <select id="day" name="day" class="date">
+                                    <option value="" disabled selected>
+                                        Ngày
+                                    </option>
+                                </select>
+                            </span>
+                            <span class="form-row">
+                                <label for="month">Tháng sinh*</label>
+                                <select
+                                    id="month"
+                                    name="month"
+                                    class="date"
+                                    required
+                                >
+                                    <option value="" disabled selected>
+                                        Tháng
+                                    </option>
+                                </select>
+                            </span>
+                            <span class="form-row">
+                                <label for="year">Năm sinh*</label>
+                                <select
+                                    id="year"
+                                    name="year"
+                                    class="date"
+                                    required
+                                >
+                                    <option value="" disabled selected>
+                                        Năm
+                                    </option>
+                                </select>
+                            </span>
+                        </div>
+                        <label>Giới tính*</label><br />
+                        <div class="sex">
+                            <label for="male">Nam</label><br />
+                            <input
+                                type="radio"
+                                id="male"
+                                name="gender"
+                                value="male"
+                                class="form-row"
+                                required
+                            />
+                            <label for="female">Nữ</label><br />
+                            <input
+                                type="radio"
+                                id="female"
+                                name="gender"
+                                value="female"
+                                class="form-row"
+                                required
+                            />
+                            <label for="other">Khác</label><br />
+                            <input
+                                type="radio"
+                                id="other"
+                                name="gender"
+                                value="other"
+                                class="form-row"
+                                required
+                            />
+                        </div>
+                        <button
+                            class="btn btn-Modal"
+                            type="button"
+                            onclick="closeSignupModal()"
+                        >
+                            Hủy
+                        </button>
+                        <button class="btn btn-Modal2" type="submit">
+                            Đăng ký
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- Slide Show -->
+            <div class="slider">
+                <div class="list">
+                    <div class="item">
+                        <a href="#!"
+                            ><img src="./assets/img/banner1.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#!"
+                            ><img src="./assets/img/banner6.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#!"
+                            ><img src="./assets/img/banner3.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#!"
+                            ><img src="./assets/img/banner4.jpg" alt=""
+                        /></a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <img
+                        id="prev"
+                        class="arrow"
+                        src="./assets/img/bx-chevrons-left.svg"
+                        alt=""
+                    />
+                    <img
+                        id="next"
+                        class="arrow"
+                        src="./assets/img/bx-chevrons-right.svg"
+                        alt=""
+                    />
+                </div>
+                <ul class="dots">
+                    <a href="#!"><li class="active"></li></a>
+                    <a href="#!"><li></li></a>
+                    <a href="#!"><li></li></a>
+                    <a href="#!"><li></li></a>
+                </ul>
+            </div>
+            <!-- Bannner -->
+            <div class="banner-container">
+                <div class="content">
+                    <h2 class="heading lv2">Không Gian Sống Với Besnik.</h2>
+                    <div class="banner-content">
+                        <div class="left-content">
+                            <a href="#!" class="left-iteam">
+                                <img
+                                    src="./assets/img/banner7.jpg"
+                                    alt="Phòng Khách"
+                                />
+                                <p class="desc">Phòng khách</p>
+                            </a>
+                            <a href="#!" class="left-iteam">
+                                <img
+                                    src="./assets/img/banner8.jpg"
+                                    alt="Phòng Ngủ"
+                                />
+                                <p class="desc">Phòng ngủ</p>
+                            </a>
+                        </div>
+                        <div class="right-content">
+                            <a href="#!" class="right-item high-item">
+                                <img
+                                    src="./assets/img/banner9.jpg"
+                                    alt="Nội Thất"
+                                />
+                                <p class="desc">Combo nội thất</p>
+                            </a>
+                            <div class="right-item row-img">
+                                <a href="#!" class="ri-1">
+                                    <img
+                                        src="./assets/img/banner10.jpg"
+                                        alt="Nhà Bếp"
+                                    />
+                                    <p class="desc">Nhà Bếp</p>
+                                </a>
+                                <a href="#!" class="ri-2">
+                                    <img
+                                        src="./assets/img/banner5.jpg"
+                                        alt="Khuyến mãi"
+                                    />
+                                    <p class="desc">Khuyến mãi</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Collection 1 -->
+            <div class="collection">
+                <div class="content">
+                    <div class="head-title">
+                        <h2 class="heading lv2 high-title">
+                            Besnik Giảm Giá Lên Đến - 48%
+                        </h2>
+                        <a class="view-more" href="#!">Xem thêm</a>
+                    </div>
+                    <div class="list">
+                        <div class="items-row">
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham1.jpg"
+                                        alt=" Giường Ngủ Gỗ Tràm Besnik Malaga 302
+                                        Nhiều Kích Thước"
+                                    />
+                                    <span class="sale">-47%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Giường Ngủ Gỗ Tràm Besnik Malaga 302
+                                            Nhiều Kích Thước
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >3,199,000₫
+                                            <strong class="value"
+                                                >5,990,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(31)</a>
+                                            <span class="sell">Đã bán 171</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham2.jpg"
+                                        alt="Giường Ngủ Gỗ Tràm Besnik Vline 601
+                                        Nhiều Kích Thước"
+                                    />
+                                    <span class="sale">-38%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Giường Ngủ Gỗ Tràm Besnik Vline 601
+                                            Nhiều Kích Thước
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >4,990,000₫
+                                            <strong class="value"
+                                                >7,990,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(21)</a>
+                                            <span class="sell">Đã bán 86</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham3.jpg"
+                                        alt="Giường Ngủ Gỗ Tràm Besnik Malaga 301
+                                        V2 Nhiều Kích Thước"
+                                    />
+                                    <span class="sale">-47%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Giường Ngủ Gỗ Tràm Besnik Malaga 301
+                                            V2 Nhiều Kích Thước
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >4,790,000₫
+                                            <strong class="value"
+                                                >8,990,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(31)</a>
+                                            <span class="sell">Đã bán 171</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham4.jpg"
+                                        alt="Ghế Ăn Gỗ Cao Su Tự Nhiên Besnik
+                                        Nexo 601"
+                                    />
+                                    <span class="sale">-46%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Ăn Gỗ Cao Su Tự Nhiên Besnik
+                                            Nexo 601
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >1,500,000₫
+                                            <strong class="value"
+                                                >2,790,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(131)</a>
+                                            <span class="sell">Đã bán 437</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham5.jpg"
+                                        alt="Ghế Sofa Gỗ Tràm Tự Nhiên Besnik
+                                        Kolding 701"
+                                    />
+                                    <span class="sale">-29%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Sofa Gỗ Tràm Tự Nhiên Besnik
+                                            Kolding 701
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >11,990,000₫
+                                            <strong class="value"
+                                                >16,790,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(78)</a>
+                                            <span class="sell">Đã bán 222</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham6.jpg"
+                                        alt="Bàn Sofa - Bàn Cafe - Bàn Trà Gỗ
+                                        Thông Besnik Vline 501"
+                                    />
+                                    <span class="sale">-28%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Bàn Sofa - Bàn Cafe - Bàn Trà Gỗ
+                                            Thông Besnik Vline 501
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >1,790,000₫
+                                            <strong class="value"
+                                                >2,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(71)</a>
+                                            <span class="sell">Đã bán 362</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham8.jpg"
+                                        alt="Tủ Kệ Tivi Gỗ Soài Tự Nhiên Besnik
+                                        Oslo 201"
+                                    />
+                                </a>
+                                <span class="sale">-34%</span>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Tủ Kệ Tivi Gỗ Soài Tự Nhiên Besnik
+                                            Oslo 201
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >2,290,000₫
+                                            <strong class="value"
+                                                >3,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(41)</a>
+                                            <span class="sell">Đã bán 75</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham7.jpg"
+                                        alt="Tủ Đầu Giường Gỗ Soài Tự Nhiên
+                                        Besnik Vienna 201"
+                                    />
+                                    <span class="sale">-38%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Tủ Đầu Giường Gỗ Soài Tự Nhiên
+                                            Besnik Vienna 201
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >990,000₫
+                                            <strong class="value"
+                                                >1,590,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(35)</a>
+                                            <span class="sell">Đã bán 52</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Collection 2 -->
+            <div class="collection">
+                <div class="content">
+                    <div class="head-title">
+                        <h2 class="heading lv2 high-title">
+                            Combo Siêu Giá Tốt
+                        </h2>
+                        <a class="view-more" href="#!">Xem thêm</a>
+                    </div>
+                    <div class="list">
+                        <div class="items-row">
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo1.jpg"
+                                        alt="Combo Basic Phòng Khách Grenaa 201 Màu Nâu"
+                                    />
+                                    <span class="sale">-32%</span>
+                                    <span class="new">New</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Combo Basic Phòng Khách Grenaa 201
+                                            Màu Nâu
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >5,780,000₫
+                                            <strong class="value"
+                                                >8,670,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(15)</a>
+                                            <span class="sell">Đã bán 32</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo2.jpg"
+                                        alt="Full House Bộ Sưu Tập Narvik 201 Màu Tự Nhiên"
+                                    />
+                                    <span class="sale">-32%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Full House Bộ Sưu Tập Narvik 201 Màu
+                                            Tự Nhiên
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >24,570,000₫
+                                            <strong class="value"
+                                                >36,270,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(21)</a>
+                                            <span class="sell">Đã bán 86</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo3.jpg"
+                                        alt="Hệ tủ bếp Besnik Kitchen Essential Ubeda Nhiều Kích Thước"
+                                    />
+                                    <span class="sale">-40%</span>
+                                    <span class="new">New</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Hệ tủ bếp Besnik Kitchen Essential
+                                            Ubeda Nhiều Kích Thước
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >7,890,000₫
+                                            <strong class="value"
+                                                >13,150,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(8)</a>
+                                            <span class="sell">Đã bán 19</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo4.jpg"
+                                        alt="Full Combo Phòng Khách Besnik KOSTER Màu Nâu"
+                                    />
+                                    <span class="sale">-13%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Full Combo Phòng Khách Besnik KOSTER
+                                            Màu Nâu
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >14,360,000₫
+                                            <strong class="value"
+                                                >16,560,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(17)</a>
+                                            <span class="sell">Đã bán 32</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo5.jpg"
+                                        alt="Combo Basic Phòng Ngủ Ubeda 201 Màu Tự Nhiên"
+                                    />
+                                    <span class="sale">-32%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Combo Basic Phòng Ngủ Ubeda 201 Màu
+                                            Tự Nhiên
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >4,780,000₫
+                                            <strong class="value"
+                                                >7,080,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(20)</a>
+                                            <span class="sell">Đã bán 32</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo6.jpg"
+                                        alt="Combo Basic Phòng Khách Ubeda 201 Màu Tự Nhiên"
+                                    />
+                                    <span class="sale">-32%</span>
+                                    <span class="new">New</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Combo Basic Phòng Khách Ubeda 201
+                                            Màu Tự Nhiên
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >7,270,000₫
+                                            <strong class="value"
+                                                >10,670,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(4)</a>
+                                            <span class="sell">Đã bán 10</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo8.jpg"
+                                        alt="Hệ tủ bếp Besnik Kichen Premium Narvik Nhiều Kích Thước"
+                                    />
+                                </a>
+                                <span class="sale">-40%</span>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Hệ tủ bếp Besnik Kichen Premium
+                                            Narvik Nhiều Kích Thước
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >21,890,000₫
+                                            <strong class="value"
+                                                >36,483,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(19)</a>
+                                            <span class="sell">Đã bán 42</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/combo7.jpg"
+                                        alt="Full House Besnik Lango Màu Nâu Cam"
+                                    />
+                                    <span class="sale">-12%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Full House Besnik Lango Màu Nâu Cam
+                                            Sang Trọng
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >44,870,000₫
+                                            <strong class="value"
+                                                >51,270,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(8)</a>
+                                            <span class="sell">Đã bán 15</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Collection 3 -->
+            <div class="collection">
+                <div class="content">
+                    <div class="head-title">
+                        <h2 class="heading lv2 high-title">Bán Chạy</h2>
+                        <a class="view-more" href="#!">Xem thêm</a>
+                    </div>
+                    <div class="list">
+                        <div class="items-row">
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham9.jpg"
+                                        alt="Tủ Đầu Giường Gỗ Besnik HOBRO 301"
+                                    />
+                                    <span class="sale">-27%</span>
+                                    <span class="new">New</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Tủ Đầu Giường Gỗ Soài Besnik HOBRO
+                                            301
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >2,190,000₫
+                                            <strong class="value"
+                                                >2,990,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(81)</a>
+                                            <span class="sell">Đã bán 207</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham5.jpg"
+                                        alt="Ghế Sofa Gỗ Tràm Tự Nhiên Besnik
+                                        Kolding 701"
+                                    />
+                                    <span class="sale">-29%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Sofa Gỗ Tràm Tự Nhiên Besnik
+                                            Kolding 701
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >11,990,000₫
+                                            <strong class="value"
+                                                >16,790,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(78)</a>
+                                            <span class="sell">Đã bán 222</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham6.jpg"
+                                        alt="Bàn Sofa - Bàn Cafe - Bàn Trà Gỗ
+                                        Thông Besnik Vline 501"
+                                    />
+                                    <span class="sale">-28%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Bàn Sofa - Bàn Cafe - Bàn Trà Gỗ
+                                            Thông Besnik Vline 501
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >1,790,000₫
+                                            <strong class="value"
+                                                >2,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(71)</a>
+                                            <span class="sell">Đã bán 362</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham10.jpg"
+                                        alt="Ghế Sofa Góc Gỗ Cao Su Tự Nhiên Besnik VLINE 601 Màu Xám Đậm"
+                                    />
+                                    <span class="sale">-33%</span>
+                                    <span class="new">New</span>
+                                </a>
+
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Sofa Góc Gỗ Cao Su Tự Nhiên
+                                            Besnik VLINE 601 Màu Xám Đậm
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >4,990,000₫
+                                            <strong class="value"
+                                                >7,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(5)</a>
+                                            <span class="sell">Đã bán 53</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham4.jpg"
+                                        alt="Ghế Ăn Gỗ Cao Su Tự Nhiên Besnik Nexo 601"
+                                    />
+                                    <span class="sale">-46%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Ăn Gỗ Cao Su Tự Nhiên Besnik
+                                            Nexo 601
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >1,500,000₫
+                                            <strong class="value"
+                                                >2,790,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(131)</a>
+                                            <span class="sell">Đã bán 437</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham11.jpg"
+                                        alt=" Giường Ngủ Gỗ Tràm Besnik Malaga 302
+                                        Nhiều Kích Thước"
+                                    />
+                                    <span class="sale">-7%</span>
+                                    <img
+                                        class="new"
+                                        src="./assets/img/bx-gift.svg"
+                                        alt="gift"
+                                    />
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Ghế Sofa Gỗ Cao Su Tự Nhiên Besnik
+                                            Fiji 401
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >13,490,000₫
+                                            <strong class="value"
+                                                >14,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(13)</a>
+                                            <span class="sell">Đã bán 89</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham12.jpg"
+                                        alt="Tủ Quần Áo Gỗ 2 Cánh Besnik Vienaa 201 Màu 4 lựa chọn"
+                                    />
+                                    <span class="sale">-29%</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Tủ Quần Áo Gỗ 2 Cánh Besnik Vienaa
+                                            201 Màu 4 lựa chọn
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >5,290,000₫
+                                            <strong class="value"
+                                                >7,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(21)</a>
+                                            <span class="sell">Đã bán 56</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!">
+                                    <img
+                                        class="thumb"
+                                        src="./assets/img/sanpham13.jpg"
+                                        alt="Tủ Giày – Tủ Trang Trí Gỗ Besnik Oslo 901"
+                                    />
+                                    <span class="sale">-29%</span>
+                                    <span class="best-seller">Best Seller</span>
+                                </a>
+                                <div class="desc">
+                                    <div class="title">
+                                        <a class="line-clamp" href="#!">
+                                            Tủ Giày – Tủ Trang Trí Gỗ Besnik
+                                            Oslo 901
+                                        </a>
+                                    </div>
+                                    <div class="price">
+                                        <a href="#!"
+                                            >2,490,000₫
+                                            <strong class="value"
+                                                >3,490,000₫</strong
+                                            >
+                                        </a>
+                                        <a class="cart" href="#!">
+                                            <img
+                                                class="size"
+                                                src="./assets/img/bx-cart-add.svg"
+                                                alt="cart"
+                                        /></a>
+                                    </div>
+                                    <div class="stars">
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="./assets/img/bxs-star.svg"
+                                            alt=""
+                                        />
+                                        <span class="vote">
+                                            <a class="rv" href="#!">(31)</a>
+                                            <span class="sell">Đã bán 360</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="content">
+                    <div class="blog-top">
+                        <div class="heading lv2">Bài viết mới nhất</div>
+                        <p class="desc">
+                            Đọc bài viết về nội thất của Besnik thường xuyên để
+                            cập nhật thông tin mới nhất về nội thất
+                        </p>
+                    </div>
+                    <div class="items-row">
+                        <div class="item">
+                            <a href="#!">
+                                <img
+                                    class="thumb"
+                                    src="./assets/img/blog2.jpg"
+                                    alt="Bí Quyết Để Giữ Căn Bếp Luôn Gọn Gàng"
+                                />
+                            </a>
+                            <div class="desc">
+                                <div class="title">
+                                    <a class="line-clamp blog-title" href="#!">
+                                        Bí Quyết Để Giữ Căn Bếp Luôn Gọn Gàng
+                                    </a>
+                                </div>
+                                <p class="line-clamp blog-desc">
+                                    Khu vực bếp là không gian quan trọng cho
+                                    việc cả gia đình tận hưởng bữa ăn sau một
+                                </p>
+                                <div class="btn-blog">Đọc thêm</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#!">
+                                <img
+                                    class="thumb"
+                                    src="./assets/img/blog3.jpg"
+                                    alt="Tips Trang Trí Góc Học Tập, Làm Việc Đẹp Và Khoa Học"
+                                />
+                            </a>
+                            <div class="desc">
+                                <div class="title">
+                                    <a class="line-clamp blog-title" href="#!">
+                                        Tips Trang Trí Góc Học Tập, Làm Việc Đẹp
+                                        Và Khoa Học
+                                    </a>
+                                </div>
+                                <p class="line-clamp blog-desc">
+                                    Những góc học tập, làm việc được bài trí một
+                                    cách khoa học và thông minh, giúp cho công
+                                    việc học tập của bạn thuận tiện hơn.
+                                </p>
+                                <div class="btn-blog">Đọc thêm</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#!">
+                                <img
+                                    class="thumb"
+                                    src="./assets/img/blog1.jpg"
+                                    alt="Sự Khác Biệt Giữa Phong Cách Thiết Kế Nội Thất Vintage và Retro"
+                                />
+                            </a>
+                            <div class="desc">
+                                <div class="title">
+                                    <a class="line-clamp blog-title" href="#!">
+                                        Sự Khác Biệt Giữa Phong Cách Thiết Kế
+                                        Nội Thất Vintage và Retro
+                                    </a>
+                                </div>
+                                <p class="line-clamp blog-desc">
+                                    Khi nói đến thiết kế nội thất, hai từ
+                                    "vintage" và "retro" thường được sử dụng
+                                    thay thế cho nhau.
+                                </p>
+                                <div class="btn-blog">Đọc thêm</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#!">
+                                <img
+                                    class="thumb"
+                                    src="./assets/img/blog4.jpg"
+                                    alt="Ý tưởng mở rộng không gian phòng khách"
+                                />
+                            </a>
+                            <div class="desc">
+                                <div class="title">
+                                    <a class="line-clamp blog-title" href="#!">
+                                        Ý tưởng mở rộng không gian phòng khách
+                                    </a>
+                                </div>
+                                <p class="line-clamp blog-desc">
+                                    Đối với căn hộ, chung cư,… có diện tích giới
+                                    hạn thì phòng khách thường nhỏ và hẹp.
+                                </p>
+                                <div class="btn-blog">Đọc thêm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Subscription -->
+            <div id="contact" class="subscription">
+                <div class="content">
+                    <div class="body">
+                        <img
+                            class="image"
+                            src="./assets/img/DrawKit-Vector-Illustration-ecommerce-01.svg"
+                            alt=""
+                        />
+                        <div class="info">
+                            <div class="sub-title">
+                                Đăng ký nhận tin của Besnik
+                            </div>
+                            <p class="desc line-clamp" style="--line-clamp: 3">
+                                Cập nhật những tin tức và những giảm giá siêu
+                                hot của Benisk
+                            </p>
+                            <div class="btn btn-subscr">Đăng kí</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="content">
+                <div class="row">
+                    <!-- column 1 -->
+                    <div class="column">
+                        <img
+                            src="./assets/img/logo2.svg"
+                            alt="Lesson"
+                            class="logo"
+                        />
+                        <p class="desc">
+                            Bạn muốn mái ấm của mình thêm phần sang trọng và ấm
+                            cúng đến với Besnik nơi sẽ biến giấc mơ của bạn
+                            thành hiện thực. cúng đến với Besnik nơi sẽ biến
+                            giấc mơ của bạn thành hiện thực.
+                        </p>
+                        <div class="social">
+                            <a href="#!">
+                                <img
+                                    src="./assets/img/Twitter.svg"
+                                    alt="Twitter"
+                                    class="icon"
+                                />
+                            </a>
+                            <a href="#!">
+                                <img
+                                    src="./assets/img/Facebook.svg"
+                                    alt="Facebook"
+                                    class="icon"
+                                />
+                            </a>
+                            <a href="#!">
+                                <img
+                                    src="./assets/img/Linkedin.svg"
+                                    alt="Linkedin"
+                                    class="icon"
+                                />
+                            </a>
+                            <a href="#!">
+                                <img
+                                    src="./assets/img/Instagram.svg"
+                                    alt="Instagram"
+                                    class="icon"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- column 2 -->
+                    <div class="column">
+                        <h3 class="title">Công ty</h3>
+                        <ul class="list">
+                            <li>
+                                <a href="#!">Về chúng tôi</a>
+                            </li>
+                            <li>
+                                <a href="#!">Đặc sắc</a>
+                            </li>
+                            <li>
+                                <a href="#!">Tầm Nhìn</a>
+                            </li>
+                            <li>
+                                <a href="#!">Tin tức</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- column 3 -->
+                    <div class="column">
+                        <h3 class="title">Hỗ trợ</h3>
+                        <ul class="list">
+                            <li>
+                                <a href="#!">FAQ’s</a>
+                            </li>
+                            <li>
+                                <a href="#!">Điều khoản & Điều kiện</a>
+                            </li>
+                            <li>
+                                <a href="#!">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="#!">Liên lạc</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- column 4 -->
+                    <div class="column">
+                        <h3 class="title">Địa chỉ</h3>
+                        <ul class="list">
+                            <li>
+                                <a href="#!"
+                                    ><strong>Vị Trí: </strong> 624 Đường Âu Cơ
+                                    Phường Tây Thạnh Quận Tân Phú</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#!"
+                                    ><strong>Email:</strong> besnik@gmail.com</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#!"
+                                    ><strong>Phone:</strong> + 000 1234 567
+                                    890</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">
+                    Copyright ©2024 Phạm Trọng Nhân All rights reserved
+                </p>
+            </div>
+        </footer>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
